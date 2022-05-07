@@ -1,11 +1,9 @@
 var searchHistory = JSON.parse(localStorage.getItem('history')) ?? []
 $(document).ready(function () {
     var searchBtn = $('#citySearch');
-    var apiKey = "cf176a33f5b57077e7c0175e503848b7"
+    var apiKey = "cf176a33f5b57077e7c0175e503848b7";
+    const prevList = document.getElementById("list")
 
-    searchHistory.reverse().forEach((item => {
-
-    }))
 
     searchBtn.on("click", function (e) {
         e.preventDefault()
@@ -15,6 +13,13 @@ $(document).ready(function () {
         $("#currentWeather").empty()
         $("#fiveDayWeather").empty()
         getCurrentWeather(searchValue)
+
+        searchHistory.forEach((item => {
+            //console.log(searchHistory)
+            let historyList = document.createElement('li');
+            historyList.textContent = `City: ${item}`;
+            prevList.appendChild(historyList)
+        }))
     })
 
     async function getCurrentWeather(searchValue) {
@@ -58,8 +63,6 @@ $(document).ready(function () {
         cardBody.append(tempEl, windEl, humidEl, currentIcon, uviEl)
         card.append(cardHeader, cardBody)
         $("#currentWeather").append(card)
-
-
         console.log("FIVEDAY DATA", data)
 
         data5Day.daily
@@ -81,14 +84,5 @@ $(document).ready(function () {
                 card.append(cardBody)
                 $("#fiveDayWeather").append(card)
             })
-
     }
-
-
-
-
-
-
-
-
 })
