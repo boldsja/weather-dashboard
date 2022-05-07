@@ -11,6 +11,7 @@ This project allows a user to enter a city name and display the weather for the 
    * [Questions](#questions)
 
 ## Screenshot
+![weather-dashboard-ss](https://user-images.githubusercontent.com/100175351/167272979-6c4a7f7b-bbb6-4221-92a9-c0729de941e1.png)
 
 
 ## Contributing
