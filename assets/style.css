@@ -1,0 +1,21 @@
+
+header {
+    text-align: center;
+    background-color: lightblue;
+}
+
+/* .search{
+    
+} */
+.container{
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+
+}
+
+.boxes{
+
+display: inline-block;
+    flex-direction: column;
+}
